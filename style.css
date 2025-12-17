@@ -1,8 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 body{
-    background: black;
+    background-color: black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    padding: 24px;
+}
+.sidebar .navigation ul{
+    list-style: none;
+    margin-top: 20 px;
+}
+.sidebar .navigation ul li{
+    padding: 10px 0px;
+}
+.sidebar .navigation ul li a span{
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 18px;
+}
+.sidebar .navigation ul li .fa{
+    font-size: 20px;
+    margin-right: 10px;
 }

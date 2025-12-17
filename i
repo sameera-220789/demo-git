@@ -6,257 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Clone</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="Spotify_favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/Spotify_favicon.png" type="image/x-icon">
 </head>
 
-<body style="background-color: black;">
-    <style>
-      
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-}
-body{
-    background-color: black;
-    font-family: 'Times New Roman', Times, serif;
-}
-.sidebar{
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    background-color: black;
-    padding: 24px;
-}
-.sidebar .navigation ul{
-    list-style: none;
-    margin-top: 20 px;
-}
-.sidebar .navigation ul li{
-    padding: 10px 0px;
-}
-.sidebar .navigation ul li a{
-    color: white;
-    text-decoration: none;
-    font-weight: 300;
-    font-size: 18px;
-}
-.sidebar .navigation ul li .fa{
-    font-size: 20px;
-    margin-right: 10px;
-}  
-.sidebar .navigation ul li a:hover{
-    color: #ffffff;
-}
-.sidebar .policies{
-    position: absolute;
-    bottom: 100px;
-}
-.sidebar .policies ul{
-    list-style: none;
-}
-.sidebar .policies ul li{
-    padding-bottom: 5px;
-}
-.sidebar .policies ul li a{
-    color: #b3b3b3;
-    font-weight:500;
-    text-decoration: none;
-    font-size: 10px;
-}
-.sidebar .policies ul li a:hover {
-    text-decoration: underline;
-} 
-.main-container {
-    margin-left: 350px;
-    margin-bottom: 100px;
-}
-
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #000;
-    padding: 14px 30px;
-}
-
-.topbar .prev-next-buttons button {
-    color: #7a7a7a;
-    cursor: not-allowed;
-    width: 34px;
-    height: 34px;
-    border-radius: 100%;
-    font-size: 18px;
-    border: 0px;
-    background-color: #090909;
-    margin-right: 10px;
-}
-
-.topbar .navbar {
-    display: flex;
-    align-items: center;
-}
-
-.topbar .navbar ul {
-    list-style: none;
-}
-
-.topbar .navbar ul li {
-    display: inline-block;
-    margin: 0px 8px;
-    width: 70px;
-}
-
-.topbar .navbar ul li a {
-    color: #b3b3b3;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-.topbar .navbar ul li a:hover {
-    color: #ffffff;
-    font-size: 15px;
-}
-
-.topbar .navbar button {
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 14px 30px;
-    border: 0px;
-    border-radius: 40px;
-    cursor: pointer;
-    margin-left: 20px;
-}
-
-.topbar .navbar button:hover {
-    background-color: #f2f2f2;
-}
-
-.spotify-playlists {
-    padding: 20px 40px;
-}
-
-.spotify-playlists h2 {
-    color: #ffffff;
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.spotify-playlists .list {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-}
-
-.spotify-playlists .list .item {
-    min-width: 140px;
-    width: 160px;
-    padding: 15px;
-    background-color: #181818;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all ease 0.4s;
-}
-
-.spotify-playlists .list .item:hover {
-    background-color: #252525;
-}
-
-
-
-.spotify-playlists .list .item img {
-    width: 100%;
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-
-.spotify-playlists .list .item .play {
-    position: relative;
-}
-
-.spotify-playlists .list .item .play .fa {
-    position: absolute;
-    right: 10px;
-    top: -60px;
-    padding: 18px;
-    background-color: #1db954;
-    border-radius: 100%;
-    opacity: 0;
-    transition: all ease 0.4s;
-}
-
-.spotify-playlists .list .item:hover .play .fa {
-    opacity: 1;
-    transform: translateY(-20px);
-}
-
-.spotify-playlists .list .item h4 {
-    color: #ffffff;
-    font-size: 14px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.spotify-playlists .list .item p {
-    color: #989898;
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 500;
-}
-
-.spotify-playlists hr {
-    margin: 70px 0px 0px;
-    border-color: #636363;
-}
-
-.preview {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to right, #ae2896, #509bf5);
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.preview h6 {
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
-.preview p {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.preview button {
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 14px 30px;
-    border: 0px;
-    border-radius: 40px;
-    cursor: pointer;
-}
-    </style>
+<body>
 
     <div class="sidebar">
         <div class="logo">
             <a href="">
-                <img src="Spotify Logo (1).png" alt="Logo" width="130 px">
+                <img src="./images/Spotify Logo.png" alt="Logo">
             </a>
         </div>
 
@@ -265,7 +23,7 @@ body{
                 <li>
                     <a href="">
                         <span class="fa fa-home"></span>
-                        <span>Home<span>
+                        <span>Home</span>
                     </a>
                 </li>
                 <li>
@@ -315,7 +73,7 @@ body{
 
     </div>
 
-   <div class="main-container">
+    <div class="main-container">
         <div class="topbar">
             <div class="prev-next-buttons">
                 <button type="button" class="fa fas fa-chevron-left"></button>
@@ -337,33 +95,25 @@ body{
 
             <div class="list">
                 <div class="item">
-                    <img src="Today's Top Hits.jpg" />
+                    <img src="./images/Today's Top Hits.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
                     <h4>Today's Top Hits</h4>
-                    <p > Arijit Singh is on Top 50 !</p>
+                    <p>Olivia Rodrigo is on top of the Hottest 50!</p>
                 </div>
 
                 <div class="item">
-                    <img src="indieindia.jpeg" />
+                    <img src="./images/RapCaviar.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
-                    <h4>India Indie</h4>
-                    <p style="font-color: white">New Music From Anuv jain, Karan</p>
-                </div>
-                <div class="item">
-                    <img src="malang.webp" />
-                    <div class="play">
-                        <span class="fa fa-play"></span>
-                    </div>
-                    <h4>Bollywood Mush</h4>
-                    <p>New Music from Bollywood senti vibes...</p>
+                    <h4>RapCaviar</h4>
+                    <p>New Music from Cardi B, Megan Thee Stallion an...</p>
                 </div>
 
                 <div class="item">
-                    <img src="All Out 2010s.jpg" />
+                    <img src="./images/All Out 2010s.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -372,7 +122,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="Rock Classics.jpg" />
+                    <img src="./images/Rock Classics.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -381,7 +131,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="Chill Hits.jpg" />
+                    <img src="./images/Chill Hits.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -390,7 +140,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="Viva Latino.jpg" />
+                    <img src="./images/Viva Latino.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -401,7 +151,7 @@ body{
 
 
                 <div class="item">
-                    <img src="All Out 80s.jpg" />
+                    <img src="./images/All Out 80s.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -415,7 +165,7 @@ body{
             <h2>Focus</h2>
             <div class="list">
                 <div class="item">
-                    <img src="Peaceful Piano.jpg" />
+                    <img src="./images/Peaceful Piano.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -424,7 +174,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="Deep Focus.jpg" />
+                    <img src="./images/Deep Focus.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -433,7 +183,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="Instrumental Study.jpg" />
+                    <img src="./images/Instrumental Study.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -444,7 +194,7 @@ body{
 
 
                 <div class="item">
-                    <img src="Focus Flow.jpg" />
+                    <img src="./images/Focus Flow.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -453,7 +203,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="Beats to think to.jpg" />
+                    <img src="./images/Beats to think to.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -462,7 +212,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="Reading Adventure.jpg" />
+                    <img src="./images/Reading Adventure.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -471,7 +221,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="Workday Lounge.jpg" />
+                    <img src="./images/Workday Lounge.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -485,7 +235,7 @@ body{
             <h2>Sound of India</h2>
             <div class="list">
                 <div class="item">
-                    <img src="The Sound of Mumbai.jpg" />
+                    <img src="./images/The Sound of Mumbai.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -494,7 +244,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="The Sound of Kolkata.jpg" />
+                    <img src="./images/The Sound of Kolkata.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -503,7 +253,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="The Sound of Delhi.jpg" />
+                    <img src="./images/The Sound of Delhi.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -512,7 +262,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="The Sound of Bengaluru.jpg" />
+                    <img src="./images/The Sound of Bengaluru.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -521,7 +271,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="The Sound of Chennai.jpg" />
+                    <img src="./images/The Sound of Chennai.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -530,7 +280,7 @@ body{
                 </div>
 
                 <div class="item">
-                    <img src="The Sound of Hyderabad.jpg" />
+                    <img src="./images/The Sound of Hyderabad.jpg" />
                     <div class="play">
                         <span class="fa fa-play"></span>
                     </div>
@@ -561,4 +311,3 @@ body{
 </body>
 
 </html>
-                
