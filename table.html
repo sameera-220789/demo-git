@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Table</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      background: black;
+      color: white;
+    }
+
+    /* Background Video */
+    .bg-video {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: -1;
+    }
+
+    /* Center table */
+    .table-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Spotify Table */
+    .Spotify-Table {
+      width: 80%;
+      border-collapse: collapse;
+      backdrop-filter: blur(10px);
+      background: rgba(20, 20, 20, 0.75);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .Spotify-Table thead {
+      color: #b3b3b3;
+      font-size: 14px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .Spotify-Table th,
+    .Spotify-Table td {
+      padding: 14px;
+      text-align: left;
+    }
+
+    .Spotify-Table tbody tr {
+      background: rgba(0, 0, 0, 0.4);
+      transition: background 0.25s ease;
+      cursor: pointer;
+    }
+
+    .Spotify-Table tbody tr:hover {
+      background: rgba(26, 26, 26, 0.85);
+    }
+
+    .Spotify-Table span {
+      color: #b3b3b3;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Video (Muted Autoplay) -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="videoplayback.mp4" type="video/mp4">
+  </video>
+
+  <!-- Table -->
+  <div class="table-container">
+    <table class="Spotify-Table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><strong>Alag Aasmaan</strong></td>
+          <td><span>Anuv Jain</span></td>
+          <td>Single</td>
+          <td>3:42</td>
+        </tr>
+        <tr>
+          <td><strong>For A Reason</strong></td>
+          <td><span>Karan Aujla</span></td>
+          <td>For A Reason</td>
+          <td>2:56</td>
+        </tr>
+        <tr>
+          <td><strong>Channa Mereya</strong></td>
+          <td><span>Arijit Singh</span></td>
+          <td>Ae Dil Hai Mushkil</td>
+          <td>5:27</td>
+        </tr>
+        <tr>
+          <td><strong>Na Samajh</strong></td>
+          <td><span>Aditya Rikhari</span></td>
+          <td>Single</td>
+          <td>3:27</td>
+        </tr>
+        <tr>
+          <td><strong>Asal Mein</strong></td>
+          <td><span>Darshan Raval</span></td>
+          <td>Single</td>
+          <td>3:59</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Background Audio -->
+  <audio id="bgAudio" loop>
+    <source src="videoplayback.m4a" type="audio/mp4">
+  </audio>
+
+  <!-- JavaScript -->
+  <script>
+    const audio = document.getElementById("bgAudio");
+
+    document.body.addEventListener("click", () => {
+      audio.volume = 0.2;   // soft Spotify vibe
+      audio.play();
+    }, { once: true });
+  </script>
+
+</body>
+</html>
