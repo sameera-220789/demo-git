@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | Spotify Clone</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ef9a692198.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ---------- SIDEBAR ---------- */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 300px;
+            padding: 24px;
+            background-color: black;
+        }
+
+        .logo img {
+            width: 130px;
+            margin-bottom: 30px;
+        }
+
+        .navigation ul {
+            list-style: none;
+        }
+
+        .navigation li {
+            margin-bottom: 15px;
+        }
+
+        .navigation a {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navigation a:hover,
+        .navigation a.active {
+            color: white;
+        }
+
+        /* ---------- MAIN ---------- */
+        .main-container {
+            margin-left: 300px;
+            padding-bottom: 100px;
+        }
+
+        /* ---------- TOPBAR ---------- */
+        .topbar {
+            position: sticky;
+            top: 0;
+            background-color: black;
+            padding: 20px 40px;
+            z-index: 10;
+        }
+
+        /* ---------- SEARCH BOX ---------- */
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #242424;
+            padding: 14px 20px;
+            border-radius: 40px;
+            max-width: 420px;
+        }
+
+        .search-box i {
+            color: #b3b3b3;
+            font-size: 18px;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        /* ---------- CONTENT ---------- */
+        .content {
+            padding: 40px;
+        }
+
+        .content h3 {
+            margin-bottom: 20px;
+        }
+
+        /* ---------- BROWSE GRID ---------- */
+        .browse-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .browse-card {
+            height: 100px;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .browse-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Spotify Logo (1).png" alt="Spotify">
+            </a>
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <i class="fa fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="search.html" class="active">
+                        <i class="fa fa-search"></i>
+                        Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main-container">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <div class="search-box">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="What do you want to listen to?">
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <h3>Browse all</h3>
+
+            <div class="browse-grid">
+                <div class="browse-card" style="background:#8d67ab">Pop</div>
+                <div class="browse-card" style="background:#e8115b">Bollywood</div>
+                <div class="browse-card" style="background:#1db954">Podcasts</div>
+                <div class="browse-card" style="background:#ff6437">Charts</div>
+                <div class="browse-card" style="background:#509bf5">New Releases</div>
+                <div class="browse-card" style="background:#ba5d07">Rock</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
