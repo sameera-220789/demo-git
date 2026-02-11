@@ -7,10 +7,6 @@ echo "<h1>PHP File Handling Demonstration</h1>";
 $filename = "demo.txt";
 $folder = "testFolder";
 
-/* ===============================
-   1️⃣ FILE READ / WRITE
-================================ */
-
 echo "<h2>1. File Read / Write</h2>";
 
 // fopen + fwrite
@@ -38,9 +34,7 @@ file_put_contents($filename, "Updated using file_put_contents()\n");
 echo "<br><b>Using file():</b><br>";
 print_r(file($filename));
 
-/* ===============================
-   2️⃣ FILE INFORMATION
-================================ */
+
 
 echo "<h2>2. File Information</h2>";
 
@@ -55,9 +49,6 @@ echo "Owner: " . fileowner($filename) . "<br>";
 echo "Group: " . filegroup($filename) . "<br>";
 echo "Inode: " . fileinode($filename) . "<br>";
 
-/* ===============================
-   3️⃣ FILE & FOLDER MANAGEMENT
-================================ */
 
 echo "<h2>3. File & Folder Management</h2>";
 
@@ -87,9 +78,7 @@ echo "File deleted.<br>";
 rmdir($folder);
 echo "Folder removed.<br>";
 
-/* ===============================
-   4️⃣ DIRECTORY HANDLING
-================================ */
+
 
 echo "<h2>4. Directory Handling</h2>";
 
@@ -109,9 +98,7 @@ echo "Changing directory (demo only)...<br>";
 chdir(".");
 echo "Now Current Directory: " . getcwd() . "<br>";
 
-/* ===============================
-   5️⃣ FILE LOCKING
-================================ */
+
 
 echo "<h2>5. File Locking</h2>";
 
@@ -123,9 +110,6 @@ if (flock($file, LOCK_EX)) {
 }
 fclose($file);
 
-/* ===============================
-   6️⃣ FILE MODES DEMONSTRATION
-================================ */
 
 echo "<h2>6. File Modes Demonstration</h2>";
 
@@ -155,3 +139,4 @@ foreach ($modes as $mode) {
 
 echo "<hr><h3>All Demonstrations Completed Successfully!</h3>";
 ?>
+
