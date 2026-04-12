@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Lab Experiment</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        #box {
+            width: 300px;
+            height: 150px;
+            background-color: lightblue;
+            border: 2px solid black;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            color: red;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+
+        ul {
+            margin-top: 20px;
+        }
+
+        li {
+            cursor: pointer;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="heading">jQuery DOM Manipulation Lab</h1>
+
+    <button id="btn1">Change Text</button>
+    <button id="btn2">Change CSS</button>
+    <button id="btn3">Hide Box</button>
+    <button id="btn4">Show Box</button>
+    <button id="btn5">Fade Toggle</button>
+    <button id="btn6">Slide Toggle</button>
+    <button id="btn7">Append Text</button>
+
+    <div id="box">
+        <p id="para">This is a paragraph inside the box.</p>
+        <p class="child">Click me to test traversing</p>
+    </div>
+
+    <ul id="list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+
+            // DOM Manipulation
+            $("#btn1").click(function(){
+                $("#heading").text("Heading Changed using jQuery");
+            });
+
+            $("#btn2").click(function(){
+                $("#heading").addClass("highlight");
+                $("#box").css({
+                    "background-color": "lightgreen",
+                    "border-radius": "10px"
+                });
+            });
+
+            $("#btn7").click(function(){
+                $("#box").append("<p>New paragraph added dynamically</p>");
+            });
+
+            // Effects
+            $("#btn3").click(function(){
+                $("#box").hide(1000);
+            });
+
+            $("#btn4").click(function(){
+                $("#box").show(1000);
+            });
+
+            $("#btn5").click(function(){
+                $("#box").fadeToggle(1000);
+            });
+
+            $("#btn6").click(function(){
+                $("#box").slideToggle(1000);
+            });
+
+            // Event Handling
+            $("#para").click(function(){
+                alert("Paragraph clicked!");
+            });
+
+            $("#para").mouseenter(function(){
+                $(this).css("color", "blue");
+            });
+
+            $("#para").mouseleave(function(){
+                $(this).css("color", "black");
+            });
+
+            // Traversing
+            $(".child").click(function(){
+                $(this).parent().css("background-color", "yellow");
+            });
+
+            $("#list li").click(function(){
+                $(this).siblings().css("color", "black");
+                $(this).css("color", "red");
+            });
+
+        });
+    </script>
+
+</body>
+</html>
